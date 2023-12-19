@@ -37,11 +37,10 @@ jobs:
         run: |
           pwd
           ls -al
-      - name: "installing terraforms"
-        run: |
-          wget https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_linux_amd64.zip
-          unzip terraform_1.6.6_linux_amd64.zip
-          ./terraform version
+      - name: " install terraform "
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.6"
       - name: "Running script.sh"
         run: |
           chmod +x script.sh
