@@ -41,6 +41,11 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.6.6"
+
+      - name: "Terraform installed version "
+        run: terraform version
+        shell: bash
+
       - name: "Running script.sh"
         run: |
           chmod +x script.sh
